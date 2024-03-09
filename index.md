@@ -1,6 +1,6 @@
 ---
 layout: home
-title: {{page.title}}
+title: india timer .online
 ---
 <div class="container">
         {% include header.html %}

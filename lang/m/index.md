@@ -1,6 +1,6 @@
 ---
 layout: sub2
-title: {{page.title}}
+title: india timer .online
 
 lang: m
 
