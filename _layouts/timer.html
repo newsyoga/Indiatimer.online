@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+    <body>
+        
+        <div class="container">
+            {% include header.html %}
+            <div class="countCnt countCntTmr">
+                <div class="spcCntr"><span id="hr">00</span> : <span id="mn">00</span> : <span id="sc">00</span></div>
+            </div>
+            <div class="container boxxer">
+                <a  ><button id="start" class="btn btn-primary">{{page.button1.title}}</button></a>
+                <a  ><button id="stop" class="btn btn-primary">{{page.button2.title}}</button></a>
+                <a  ><button id="reset" class="btn btn-primary">{{page.button3.title}}</button></a>
+            </div>
+        </div>
+
+        <script src= "/assets/timer.js" ></script>
+        <script src= "/assets/bootstrap-3.4.1-dist/js/bootstrap.min.js" ></script>
+    </body>
+</html>
+

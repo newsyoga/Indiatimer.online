@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+:root{
+    --bggrad: linear-gradient(to bottom , #6DAEDB , #B9836B, #F26419);
+    --bgcrad: linear-gradient(to bottom  ,#F26419, #EB9A70, #9ECEF2, #6DAEDB);
+    --txtclr: #173753;
+    --fhs: 4.635 dvh;
+    --grl: 61.803 dvh;
+    --grs: 38.197 dvh;
+    --grh: 14.590 dvh
+}
+
+body{
+    background-image: var(--bggrad);
+    height: 100dvh;
+    color: var(--txtclr);
+}
+
+.jockey-one-regular {
+    font-family: "Jockey One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+h1{
+    font-family: "Jockey One", sans-serif;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 2%;
+}
+
+button:hover{
+    font-size: 38px;
+}
+
+
+.whiteclr{
+    color: white;
+}
+
+.container a button{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 14%;
+    padding: 4% 4%;
+    border-radius: 22px;
+}
+
+.boxxer{
+    margin-top: 14%;
+}
+header a, header a:active{
+    all:inherit;
+}
+
+.countCnt{
+    aspect-ratio: 1/1;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    font-size: 60px;
+    border-radius: 100%;
+    background-image: var(--bgcrad);
+    font-weight: 100;
+    margin-top: 20%;
+}
+
+.countCnt div{
+    padding-top: calc(30% - 30px);
+}
+
+@media screen and (min-width: 600px) {
+
+    .container a button{
+        margin-bottom: 2%;
+        padding: 1% 1%;
+        border-radius: 22px;
+    }
+
+    .countCnt{
+        width: 30%;
+        margin-top: 4%;
+    }
+
+    .countCnt div{
+        padding-top: calc(40% - 30px);
+    }
+
+    .boxxer{
+        margin-top: 4%;
+    }
+
+  }

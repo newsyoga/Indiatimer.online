@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+    <body>
+        
+        <div class="container">
+            {% include header.html %}
+            <div class="countCnt">
+                <div id="clicks">0</div>
+            </div>
+            <div class="container boxxer">
+                <a  ><button type="button" onClick="count()" class="btn btn-primary">{{page.button1.title}}</button></a>
+                <a  ><button type="button" onClick="resetcnt()"  class="btn btn-primary">{{page.button2.title}}</button></a>
+            </div>
+        </div>
+
+        <script src= "/assets/mantra.js" ></script>
+        <script src= "/assets/bootstrap-3.4.1-dist/js/bootstrap.min.js" ></script>
+    </body>
+</html>
+
