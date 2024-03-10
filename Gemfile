@@ -4,4 +4,4 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem "jekyll"
-gem "thin"
+gem "jekyll-seo-tag"

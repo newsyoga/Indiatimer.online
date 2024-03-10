@@ -1,1 +1,12 @@
 url: "https://newsyoga.github.io/Indiatimer.online/"
+
+plugins:
+  - jekyll-seo-tag
+
+
+title: indiatimer | indiatimer.online | india timer
+tagline: Timer for india | simple timer | timer in marathi | timer in hindi
+description: Timer for india | simple timer | timer in marathi | timer in hindi
+author: shantanup410@gmail.com
+
+logo: https://avatars.githubusercontent.com/u/161567259?v=4
