@@ -11,5 +11,11 @@ button2:
 
 button3:
     title: zero
+
+hour: hour
+
+min: min
+
+sec: sec
 ---
 
