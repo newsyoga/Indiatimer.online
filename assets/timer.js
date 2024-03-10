@@ -25,11 +25,13 @@ range.addEventListener("input", setValue());
   
   
 function setValue(){
+    document.getElementById("myAudio").pause();
     updateReadings(range.value);
 }
 
 function startTimer(){
     countTimer = true;   
+    document.getElementById("myAudio").pause();
 }
 
 function stopTimer(){
@@ -38,6 +40,7 @@ function stopTimer(){
 }
 
 function resetTimer(){
+    document.getElementById("myAudio").pause();
     updateReadings(0);  
 }
 
@@ -85,8 +88,11 @@ function incrementSecCount(){
         if(timeVal <= 0){
             countTimer = false;
             audioIn.play();
+            range.value = timeVal;
         }else{
             updateReadings(--timeVal);
+            
         }
     }
+
 }
