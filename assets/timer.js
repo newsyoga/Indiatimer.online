@@ -1,78 +1,92 @@
 let startBtn = document.getElementById('start'); 
 let stopBtn = document.getElementById('stop'); 
 let resetBtn = document.getElementById('reset'); 
+const dateObj = {
+    hour: 0,
+    minute: 0,
+    second: 0
+};
+var range = document.getElementById('myRange');
+
+let countTimer = false;
+
+const hourdv = document.getElementById('hr');
+const mindv = document.getElementById('mn');
+const secdv = document.getElementById('sc');
+
+setInterval(incrementSecCount, 1000);
+
+
+range.addEventListener("input", setValue());
+
+
+
+
   
-let hour = 00; 
-let minute = 00; 
-let second = 00; 
-let count = 00; 
   
-startBtn.addEventListener('click', function () { 
-    timer = true; 
-    stopWatch(); 
-}); 
-  
-stopBtn.addEventListener('click', function () { 
-    timer = false; 
-}); 
-  
-resetBtn.addEventListener('click', function () { 
-    timer = false; 
-    hour = 0; 
-    minute = 0; 
-    second = 0; 
-    count = 0; 
-    document.getElementById('hr').innerHTML = "00"; 
-    document.getElementById('min').innerHTML = "00"; 
-    document.getElementById('sec').innerHTML = "00"; 
-    document.getElementById('count').innerHTML = "00"; 
-}); 
-  
-function stopWatch() { 
-    if (timer) { 
-        count++; 
-  
-        if (count == 100) { 
-            second++; 
-            count = 0; 
-        } 
-  
-        if (second == 60) { 
-            minute++; 
-            second = 0; 
-        } 
-  
-        if (minute == 60) { 
-            hour++; 
-            minute = 0; 
-            second = 0; 
-        } 
-  
-        let hrString = hour; 
-        let minString = minute; 
-        let secString = second; 
-        let countString = count; 
-  
-        if (hour < 10) { 
-            hrString = "0" + hrString; 
-        } 
-  
-        if (minute < 10) { 
-            minString = "0" + minString; 
-        } 
-  
-        if (second < 10) { 
-            secString = "0" + secString; 
-        } 
-  
-        if (count < 10) { 
-            countString = "0" + countString; 
-        } 
-  
-        document.getElementById('hr').innerHTML = hrString; 
-        document.getElementById('mn').innerHTML = minString; 
-        document.getElementById('sc').innerHTML = secString; 
-        //document.getElementById('count').innerHTML = countString; 
-        setTimeout(stopWatch, 10); 
-    } 
+function setValue(){
+    updateReadings(range.value);
+}
+
+function startTimer(){
+    countTimer = true;   
+}
+
+function stopTimer(){
+    countTimer = false;  
+    document.getElementById("myAudio").pause();
+}
+
+function resetTimer(){
+    updateReadings(0);  
+}
+
+function readTime(){
+    let retObj = Object.create(dateObj);
+
+    retObj.hour = parseInt(hourdv.innerHTML);
+    retObj.minute = parseInt(mindv.innerHTML);
+    retObj.second = parseInt(secdv.innerHTML);
+    let tmp = toSec(retObj);
+    return (tmp);
+}
+
+function toSec(inobj){
+    let secsOp = parseInt((inobj.hour * 60 * 60)) + parseInt(inobj.minute * 60) + parseInt(inobj.second);
+    return secsOp;
+}
+
+function toTime(secInp){
+    let timeObjRet = Object.create(dateObj);
+
+    timeObjRet.hour = Math.floor(secInp / 3600);
+    let hrmx = secInp % 3600;
+
+    timeObjRet.minute = Math.floor(hrmx / 60);
+    timeObjRet.second = hrmx % 60;
+
+    return timeObjRet;
+}
+
+function updateReadings(secs){
+    let readings = toTime(secs);
+    
+    hourdv.innerHTML = readings.hour;
+    mindv.innerHTML = readings.minute;
+    secdv.innerHTML = readings.second;
+}
+
+function incrementSecCount(){
+    let audioIn = document.getElementById("myAudio");
+
+    if(countTimer ){
+        let timeVal = readTime();
+        
+        if(timeVal <= 0){
+            countTimer = false;
+            audioIn.play();
+        }else{
+            updateReadings(--timeVal);
+        }
+    }
 }

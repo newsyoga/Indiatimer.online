@@ -10,3 +10,7 @@ function resetcnt() {
     document.getElementById("clicks").innerHTML = clicks;
   };
   
+  var element= document.getElementById("vwmnt");
+  element.addEventListener('click', function (event) {
+    count();
+});

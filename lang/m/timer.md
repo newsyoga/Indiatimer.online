@@ -11,5 +11,11 @@ button2:
 
 button3:
     title: शून्य
+
+hour: तास
+
+min: मिनिट
+
+sec: सेकंद
 ---
 

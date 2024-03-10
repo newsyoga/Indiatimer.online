@@ -15,17 +15,24 @@
     <a href="http://localhost:4000"><h1 class="">India <span class="whiteclr">timer</span> .online</h1></a>
 </header>
             <div class="countCnt countCntTmr">
-                <div class="spcCntr"><span id="hr">00</span> : <span id="mn">00</span> : <span id="sc">00</span></div>
+                <div class="spcCntr"><span id="hr">00</span> <br> <span id="mn">00</span>  <br><span id="sc">00</span>  <br></div>
+            </div>
+            <div class="slidecontainer">
+                <input onchange="setValue()" type="range" min="1" max="3600" value="4" class="slider" id="myRange">
             </div>
             <div class="container boxxer">
-                <a  ><button id="start" class="btn btn-primary">शुरू</button></a>
-                <a  ><button id="stop" class="btn btn-primary">रुको</button></a>
-                <a  ><button id="reset" class="btn btn-primary">शून्य</button></a>
+                <a  ><button id="start" onclick="startTimer()" class="btn btn-primary">शुरू</button></a>
+                <a  ><button id="stop" onclick="stopTimer()" class="btn btn-primary">रुको</button></a>
+                <a  ><button id="reset" onclick="resetTimer()" class="btn btn-primary">शून्य</button></a>
             </div>
         </div>
 
-        <script src= "/assets/timer.js" ></script>
-        <script src= "/assets/bootstrap-3.4.1-dist/js/bootstrap.min.js" ></script>
+        <script src= "http://localhost:4000/assets/timer.js" ></script>
+        <script src= "http://localhost:4000/assets/bootstrap-3.4.1-dist/js/bootstrap.min.js" ></script>
+        
+        <audio controls id="myAudio" loop>
+            <source src="http://localhost:4000/assets/sound.mp3" type="audio/mpeg" >
+          </audio>
     </body>
 </html>
 
