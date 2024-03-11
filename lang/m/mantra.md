@@ -1,6 +1,7 @@
 ---
 layout: mantra
 
+langhtml: mr
 lang: m
 
 button1:

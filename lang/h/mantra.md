@@ -1,6 +1,7 @@
 ---
 layout: mantra
 
+langhtml: hi
 lang: h
 
 button1:

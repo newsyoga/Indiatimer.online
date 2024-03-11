@@ -1,6 +1,7 @@
 ---
 layout: timer
 
+langhtml: en
 lang: e
 
 button1:
